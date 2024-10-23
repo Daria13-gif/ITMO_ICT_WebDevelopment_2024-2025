@@ -1,0 +1,8 @@
+{% extends 'strap.html' %}
+
+{% block content %}
+    <h2>Participant: {{ participant.user.username }}</h2>
+    <p>Conference: {{ participant.conference.title }}</p>
+    <p><strong>Registered On:</strong> {{ participant.id }}</p>
+    <a href="{% url 'participants' participant.conference.id %}" class="btn btn-secondary">Back to Participants</a>
+{% endblock %}

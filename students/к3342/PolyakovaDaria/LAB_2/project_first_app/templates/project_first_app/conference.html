@@ -1,0 +1,24 @@
+{% extends 'strap.html' %}
+
+{% block content %}
+    <h2>{{ conference.title }}</h2>
+    <p><strong>Themes:</strong> {{ conference.themes }}</p>
+    <p><strong>Location:</strong> {{ conference.location }}</p>
+    <p><strong>Start Date:</strong> {{ conference.start_date }}</p>
+    <p><strong>End Date:</strong> {{ conference.end_date }}</p>
+    <p><strong>Description:</strong> {{ conference.description }}</p>
+    <p><strong>Location Description:</strong> {{ conference.location_description }}</p>
+
+    <h3>Reviews:</h3>
+    {% for review in conference.reviews.all %}
+        <div>
+            <p><strong>{{ review.user.username }}:</strong> {{ review.comment }} (Rating: {{ review.rating }})</p>
+            <p><em>Added on {{ review.date_added }}</em></p>
+        </div>
+    {% empty %}
+        <p>No reviews yet.</p>
+    {% endfor %}
+
+    <a href="{% url 'add_review' conference.id %}" class="btn btn-primary">Add Review</a>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

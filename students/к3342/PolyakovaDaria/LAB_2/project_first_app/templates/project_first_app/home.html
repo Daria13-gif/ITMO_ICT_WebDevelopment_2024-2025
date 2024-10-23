@@ -1,0 +1,15 @@
+{% extends 'strap.html' %}
+
+{% block content %}
+    <h2>List of Conferences</h2>
+    <ul class="list-group">
+        {% for conference in conferences %}
+            <li class="list-group-item">
+                <a href="{% url 'conference_detail' conference.id %}">{{ conference.title }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No conferences available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'new_conference' %}" class="btn btn-primary">Add New Conference</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'strap.html' %}
+
+{% block content %}
+<h1>List of references</h1>
+<ul>
+    {% for review in reviews %}
+        <li>{{ review.comment }} - {{ review.rating }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

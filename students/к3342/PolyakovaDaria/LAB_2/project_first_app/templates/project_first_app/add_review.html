@@ -1,0 +1,12 @@
+{% extends 'strap.html' %}
+
+{% block content %}
+    <h2>Add Review for {{ conference.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+    <br>
+    <a href="{% url 'conference_detail' conference.id %}" class="btn btn-secondary">Back to Conference</a>
+{% endblock %}
