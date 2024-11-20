@@ -1,0 +1,10 @@
+site_name: "Simple DRF Project Documentation"
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - API:
+      - "Warriors": api/warriors.md
+      - "Skills": api/skills.md
+      - "Authentication": api/authentication.md
