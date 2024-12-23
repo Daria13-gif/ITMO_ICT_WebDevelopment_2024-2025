@@ -9,20 +9,22 @@
       
       
       
-        <link rel="prev" href="../Website/">
+        <link rel="prev" href="../Endpoints/">
       
+      
+        <link rel="next" href="../Interfaces/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Django Administration - Отчёт по проекту</title>
+        <title>Практическая работа №3.1. Django Web framework. Запросы и их выполнение - Отчёт по проекту</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#django-administration" class="md-skip">
+        <a href="#no31-django-web-framework" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Django Administration
+              Практическая работа №3.1. Django Web framework. Запросы и их выполнение
             
           </span>
         </div>
@@ -219,11 +221,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Website/" class="md-nav__link">
+      <a href="../Endpoints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Сайт "Список научных конференций"
+    Работа endpoint-ов
   </span>
   
 
@@ -252,7 +254,7 @@
           
   
   <span class="md-ellipsis">
-    Django Administration
+    Практическая работа №3.1. Django Web framework. Запросы и их выполнение
   </span>
   
 
@@ -263,7 +265,7 @@
         
   
   <span class="md-ellipsis">
-    Django Administration
+    Практическая работа №3.1. Django Web framework. Запросы и их выполнение
   </span>
   
 
@@ -285,9 +287,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#django-administration_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Авторизация на Django Administration
+      Настройка окружения
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Работа в shell
     </span>
   </a>
   
@@ -297,6 +308,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейсы
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -328,9 +359,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#django-administration_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Авторизация на Django Administration
+      Настройка окружения
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Работа в shell
     </span>
   </a>
   
@@ -351,18 +391,90 @@
                   
 
 
-<h1 id="django-administration">Django Administration</h1>
-<h2 id="django-administration_1">Авторизация на  Django Administration</h2>
-<p>Чтобы войти на сайт, надо авторизоваться.</p>
-<p><img alt="Авторизация" src="../images/10.png" /></p>
-<p>Затем мы попадаем на главную страницу Django Administration.</p>
-<p><img alt="Главная страница" src="../images/11.png" /></p>
-<p>Здесь в "Presentation results" мы можем указать результаты выступления (рекомендован к публикации или нет).</p>
-<p><img alt="Presentation results" src="../images/12.png" /></p>
-<p>Для этого нажимаем "Add presentation result", в предложенном списке выбираем участника с его конференцией, затем если мы хотим порекомендовать выступлениек публикации ставим галочку напротив "Is accepted" и нажимаем "Save".</p>
-<p><img alt="Рекомендация к выступлению" src="../images/13.png" /></p>
-<p>Теперь выступление рекомендовано к публикации:</p>
-<p><img alt="Рекомендовано к выступлению" src="../images/14.png" /></p>
+<h1 id="no31-django-web-framework">Практическая работа №3.1. Django Web framework. Запросы и их выполнение</h1>
+<p><strong>Практическое задание 1:</strong>
+Напишите запрос на создание 6-7 новых автовладельцев и 5-6 автомобилей, каждому автовладельцу назначьте удостоверение и от 1 до 3 автомобилей. Задание можете выполнить либо в интерактивном режиме интерпретатора, либо в отдельном python-файле. Результатом должны стать запросы и отображение созданных объектов. 
+Если вы добавляете автомобили владельцу через метод .add(), не забудьте заполнить также ассоциативную сущность “владение”.</p>
+<p><strong>Выполнение задания:</strong></p>
+<h2 id="_1">Настройка окружения</h2>
+<p>1) Для начала я перешла в директорию, где находится manage.py: </p>
+<pre><code>cd /Users/dariapolyakova/PycharmProjects/Daria_Django/django_project_poliakova
+</code></pre>
+<p>2) Далее активировала виртуальное окружение: </p>
+<pre><code>source /Users/dariapolyakova/PycharmProjects/Daria_Django/tutorial-env/bin/activate
+</code></pre>
+<p>3) Запустила команду для открытия Django shell: </p>
+<pre><code>python manage.py shell
+</code></pre>
+<h2 id="shell">Работа в shell</h2>
+<p>1) Импортируем модули</p>
+<pre><code>from project_first_app.models import CarOwner, Car, Ownership, DriversLicense
+</code></pre>
+<p>2) Посмотрим какие username есть сейчас в нашей бд
+<img alt="Photo" src="../images/1.png" />
+3) Создадим 6 новых автовладельцев при помощи запросов 
+<img alt="Photo" src="../images/2.png" />
+4) Проверим добавились ли наши юзеры
+<img alt="Photo" src="../images/3.png" />
+5) Посмотрим какие есть сейчас машины в бд 
+<img alt="Photo" src="../images/4.png" />
+6) Добавим новых 5 машин через запросы
+<img alt="Photo" src="../images/5.png" />
+7) Проверим добавились ли они
+<img alt="Photo" src="../images/6.png" />
+8) Посмотрим какие есть лицензии в моей бд
+<img alt="Photo" src="../images/7.png" />
+9) И понимаем, что пока что ни родной лицензии нет. Каждому автовладельцу назначим удостоверение
+<img alt="Photo" src="../images/8.png" />
+10) Проверим бд удостоверений
+<img alt="Photo" src="../images/9.png" />
+11) Теперь присвоим авто юзерам
+<img alt="Photo" src="../images/10.png" />
+12) Теперь владения авто выглядит так:
+<img alt="Photo" src="../images/11.png" /></p>
+<p><strong>Практическое задание 2:</strong>
+По созданным в пр.1 данным написать следующие запросы на фильтрацию:</p>
+<ul>
+<li>Где это необходимо, добавьте <code>related_name</code> к полям модели</li>
+<li>Выведите все машины марки "Toyota" (или любой другой марки, которая у вас есть)</li>
+<li>Найти всех водителей с именем "Олег" (или любым другим именем на ваше усмотрение)</li>
+<li>Взяв любого случайного владельца, получить его <code>id</code>, и по этому <code>id</code> получить экземпляр удостоверения в виде объекта модели (можно в 2 запроса)</li>
+<li>Вывести всех владельцев красных машин (или любого другого цвета, который у вас присутствует)</li>
+<li>Найти всех владельцев, чей год владения машиной начинается с 2010 (или любой другой год, который присутствует у вас в базе)</li>
+</ul>
+<p><strong>Выполнение задания:</strong></p>
+<p>1) Выведете все машины марки “Toyota” (или любой другой марки, которая у вас есть):
+<img alt="Photo" src="../images/12.png" />
+2) Найти всех водителей с именем “Олег” (или любым другим именем на ваше усмотрение):
+<img alt="Photo" src="../images/13.png" />
+3) Взяв любого случайного владельца получить его id, и по этому id получить экземпляр удостоверения в виде объекта модели (можно в 2 запроса):
+<img alt="Photo" src="../images/14.png" />
+4) Вывести всех владельцев красных машин (или любого другого цвета, который у вас присутствует):
+<img alt="Photo" src="../images/15.png" />
+5) Найти всех владельцев, чей год владения машиной начинается с 2010 (или любой другой год, который присутствует у вас в базе):
+<img alt="Photo" src="../images/16.png" /></p>
+<p><strong>Практическое задание 3:</strong></p>
+<p>Необходимо реализовать следующие запросы с применением описанных методов:</p>
+<ul>
+<li>Вывод даты выдачи самого старшего водительского удостоверения</li>
+<li>Укажите самую позднюю дату владения машиной, имеющую какую-то из существующих моделей в вашей базе</li>
+<li>Выведите количество машин для каждого водителя</li>
+<li>Подсчитайте количество машин каждой марки</li>
+<li>Отсортируйте всех автовладельцев по дате выдачи удостоверения<br />
+  (Примечание: чтобы не выводить несколько раз одни и те же таблицы воспользуйтесь методом <code>.distinct()</code>)</li>
+</ul>
+<p><strong>Выполнение задания:</strong></p>
+<p>1) Вывод даты выдачи самого старшего водительского удостоверения
+<img alt="Photo" src="../images/17.png" />
+2) Укажите самую позднюю дату владения машиной, имеющую какую-то из существующих моделей в вашей базе
+<img alt="Photo" src="../images/18.png" />
+3) Выведите количество машин для каждого водителя
+<img alt="Photo" src="../images/19.png" />
+4) Подсчитайте количество машин каждой марки
+<img alt="Photo" src="../images/20.png" />
+5) Отсортируйте всех автовладельцев по дате выдачи удостоверения (Примечание: чтобы не выводить несколько раз одни и те же таблицы воспользуйтесь методом .distinct()).
+Для выполнения этого пункта я добавила related_name='licenses' в класс DriversLicense(models.Model).
+<img alt="Photo" src="../images/21.png" /></p>
 
 
 

@@ -1,0 +1,778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Practical_work/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Работа endpoint-ов - Отчёт по проекту</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#endpoint-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Отчёт по проекту" class="md-header__button md-logo" aria-label="Отчёт по проекту" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Отчёт по проекту
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Работа endpoint-ов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Отчёт по проекту" class="md-nav__button md-logo" aria-label="Отчёт по проекту" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Отчёт по проекту
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Работа endpoint-ов
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Работа endpoint-ов
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Регистрация
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание работы endpoint-ов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для книг
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для читателей
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для читальных залов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для транзакций с книгами
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для отчетов
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practical_work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Практическая работа №3.1. Django Web framework. Запросы и их выполнение
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейсы
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Регистрация
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Описание работы endpoint-ов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для книг
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для читателей
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для читальных залов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для транзакций с книгами
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Эндпоинты для отчетов
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="endpoint-">Описание работы всех используемых endpoint-ов</h1>
+<h2 id="_1">Регистрация</h2>
+<p>Для начала надо зарегистрировать нашего библиотакаря. Для этого нам надо получить токен админа:
+1) Работа происходит через Django shell</p>
+<pre><code>python manage.py shell
+</code></pre>
+<p>2) Смотрим кто сейчас админ</p>
+<pre><code>from django.contrib.auth.models import User
+admins = User.objects.filter(is_superuser=True)
+for admin in admins:
+    print(admin.username)
+</code></pre>
+<p>3) Назначим токен админу</p>
+<pre><code>python manage.py drf_create_token Dora
+</code></pre>
+<p>4) Я получила сообщение с токеном</p>
+<pre><code>Generated token 7a239e6c01c77adad2dae14de9a4c87d85fdb3bb for user Dora
+</code></pre>
+<h2 id="endpoint-_1">Описание работы endpoint-ов</h2>
+<h2 id="_2">Эндпоинты для книг</h2>
+<ul>
+<li>
+<p><strong>Получение списка книг или добавление новой книги:</strong></p>
+<ul>
+<li>GET и POST: http://127.0.0.1:8000/api/books/</li>
+</ul>
+<p>GET (получение списка книг):
+<img alt="Photo" src="../images/22.png" />
+Запрос <code>GET /api/books/</code> возвращает список всех книг в библиотеке с их деталями, включая название, авторов, издательство, год публикации, раздел и статус списания.</p>
+<p>POST (создание книги):
+<img alt="Photo" src="../images/23.png" />
+<img alt="Photo" src="../images/24.png" />
+Запрос <code>POST /api/books/</code> используется для добавления новой книги в библиотеку. В теле запроса передаются данные о книге в формате JSON, включая название, авторов, издательство, год публикации, раздел, шифр и статус списания.</p>
+<ul>
+<li>GET (по id): http://127.0.0.1:8000/api/books/<int:pk>/</li>
+</ul>
+<p>GET (получение информации для книги по id):
+<img alt="Photo" src="../images/25.png" /></p>
+<ul>
+<li>PATCH (обновление по id): http://127.0.0.1:8000/api/books/<int:pk>/</li>
+</ul>
+<p>PATCH (обновление информации для книги по id):
+<img alt="Photo" src="../images/26.png" />
+<img alt="Photo" src="../images/27.png" />
+Запрос <code>PATCH /api/books/11/</code> используется для частичного обновления информации о книге с ID 11. В данном случае пример показывает изменение поля <code>is_discarded</code> на <code>true</code>, чтобы пометить книгу как списанную.</p>
+<ul>
+<li>DELETE (удаление по id): http://127.0.0.1:8000/api/books/<int:pk>/</li>
+</ul>
+<p>DELETE (удаление по id):
+<img alt="Photo" src="../images/28.png" />
+<img alt="Photo" src="../images/29.png" /></p>
+</li>
+<li>
+<p><strong>Получение списка просроченных книг (выданных более месяца назад):</strong></p>
+<ul>
+<li>GET: http://127.0.0.1:8000/api/books/late/
+<img alt="Photo" src="../images/30.png" />
+Запрос <code>GET /api/books/late/</code> возвращает список книг, которые просрочены (выданы более месяца назад). Ответ содержит информацию о транзакциях, включая дату выдачи, тип транзакции, срок возврата, статус возврата, ID книги и читателя.</li>
+<li>
+<p><strong>Перенос экземпляра книги в другой зал:</strong></p>
+</li>
+<li>
+<p>POST: http://127.0.0.1:8000/api/books/<int:book_copy_id>/transfer/
+<img alt="Photo" src="../images/31.png" />
+<img alt="Photo" src="../images/32.png" />
+Запрос POST /api/books/<book_id>/transfer/ используется для переноса экземпляра книги в другой читальный зал. В теле запроса указывается room_id, чтобы задать новый зал, к которому будет прикреплена книга.</p>
+</li>
+<li>
+<p><strong>Добавление и удаление экземпляров книги:</strong></p>
+</li>
+<li>
+<p>POST и DELETE: http://127.0.0.1:8000/api/books/<int:book_copy_id>/manage_copies/</p>
+</li>
+</ul>
+<p>POST (добавление экземпляров книги):
+<img alt="Photo" src="../images/33.png" />
+<img alt="Photo" src="../images/34.png" />
+Запрос <code>POST /api/books/&lt;book_id&gt;/manage_copies/</code> добавляет экземпляры книги в указанный зал, принимая <code>quantity</code> и <code>room_id</code> в теле запроса.</p>
+<p>DELETE (удаление экземпляров книги):
+<img alt="Photo" src="../images/35.png" />
+DELETE удаляет определенное количество экземпляров из указанного зала.
+- <strong>Обновление шифра книги:</strong></p>
+<ul>
+<li>PATCH: http://127.0.0.1:8000/api/books/<int:room_id>/update_code/
+<img alt="Photo" src="../images/36.png" />
+<img alt="Photo" src="../images/37.png" />
+Эндпоинт <code>PATCH /api/books/&lt;book_id&gt;/update_code/</code> используется для обновления шифра книги. В теле запроса передается новый код, который заменяет текущий.</li>
+</ul>
+</li>
+<li>
+<p><strong>Получение списка книг с количеством экземпляров &lt;= 2:</strong></p>
+<ul>
+<li>GET: http://127.0.0.1:8000/api/books/low_stock/
+<img alt="Photo" src="../images/38.png" />
+Эндпоинт <code>GET /api/books/low_stock/</code> возвращает список книг с количеством экземпляров, равным или меньшим двум, вместе с информацией о книгах и связанных читателях.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">Эндпоинты для читателей</h2>
+<ul>
+<li>
+<p><strong>Получение списка читателей или добавление нового читателя:</strong></p>
+<ul>
+<li>GET и POST: http://127.0.0.1:8000/api/readers/</li>
+</ul>
+<p>GET (получение списка читателей):
+<img alt="Photo" src="../images/39.png" />
+Эндпоинт <code>GET /api/readers/</code> возвращает список читателей библиотеки с информацией о каждом из них, включая номер читательского билета, полное имя, паспортные данные, дату рождения, адрес, уровень образования и привязанный читальный зал.</p>
+<p>POST (добавление нового читателя):
+<img alt="Photo" src="../images/40.png" />
+<img alt="Photo" src="../images/41.png" />
+Эндпоинт <code>POST /api/readers/</code> используется для добавления нового читателя. В теле запроса передаются данные читателя, такие как номер билета, имя, паспортные данные, дата рождения, адрес, номер телефона, уровень образования и другие детали.</p>
+</li>
+<li>
+<p><strong>Получение списка книг, закрепленных за конкретным читателем:</strong></p>
+<ul>
+<li>GET: http://127.0.0.1:8000/api/readers/<int:reader_id>/books/
+<img alt="Photo" src="../images/42.png" />
+Эндпоинт <code>GET /api/readers/&lt;reader_id&gt;/books/</code> возвращает список книг, закрепленных за конкретным читателем, включая информацию о транзакциях, таких как дата выдачи, срок возврата и статус возврата.</li>
+</ul>
+</li>
+<li>
+<p><strong>Удаление читателей, которые не перерегистрировались в течение года:</strong></p>
+<ul>
+<li>DELETE: http://127.0.0.1:8000/api/readers/remove_old/ 
+<img alt="Photo" src="../images/43.png" />
+Эндпоинт DELETE /api/readers/remove_old/ удаляет читателей, которые не перерегистрировались в течение года.</li>
+</ul>
+</li>
+<li>
+<p><strong>Перемещение читателя в другой зал:</strong></p>
+<ul>
+<li>POST: http://127.0.0.1:8000/api/readers/<int:reader_id>/transfer/
+<img alt="Photo" src="../images/44.png" />
+<img alt="Photo" src="../images/45.png" />
+Эндпоинт <code>POST /api/readers/&lt;reader_id&gt;/transfer/</code> используется для переноса читателя в другой читальный зал. В теле запроса передается <code>room_id</code>, указывающий новый зал, к которому будет прикреплен читатель.</li>
+</ul>
+</li>
+<li>
+<p><strong>Обновление номера читательского билета:</strong></p>
+<ul>
+<li>PATCH: http://127.0.0.1:8000/api/readers/<int:reader_id>/update_ticket/
+<img alt="Photo" src="../images/46.png" />
+<img alt="Photo" src="../images/47.png" />
+Эндпоинт <code>PATCH /api/readers/&lt;reader_id&gt;/update_ticket/</code> используется для обновления номера читательского билета. В теле запроса передается новый номер билета через параметр <code>new_ticket_number</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">Эндпоинты для читальных залов</h2>
+<ul>
+<li>
+<p><strong>Получение списка читальных залов и создание нового:</strong></p>
+<ul>
+<li>POST и GET: http://127.0.0.1:8000/api/reading_rooms/</li>
+</ul>
+<p>GET (получение списка читальных залов):
+<img alt="Photo" src="../images/48.png" />
+Эндпоинт <code>GET /api/reading_rooms/</code> возвращает список всех читальных залов с их характеристиками, включая идентификатор, номер, название и вместимость каждого зала.</p>
+<p>POST (создание нового читательного зала):
+<img alt="Photo" src="../images/49.png" />
+<img alt="Photo" src="../images/50.png" />
+Эндпоинт <code>POST /api/reading_rooms/</code> используется для создания нового читального зала. В теле запроса указываются данные о зале, такие как номер, название и вместимость.</p>
+</li>
+<li>
+<p><strong>Получение списка читателей, прикрепленных к залу:</strong></p>
+<ul>
+<li>GET: http://127.0.0.1:8000/api/reading_rooms/<int:room_id>/readers/
+<img alt="Photo" src="../images/51.png" />
+Эндпоинт <code>GET /api/reading_rooms/&lt;room_id&gt;/readers/</code> возвращает список читателей, прикрепленных к указанному читальному залу, включая их данные, такие как номер билета, имя, адрес, уровень образования и другую информацию.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_5">Эндпоинты для транзакций с книгами</h2>
+<ul>
+<li>
+<p><strong>Получение списка транзакций с книгами и добавление новой транзакции:</strong></p>
+<ul>
+<li>GET и POST: http://127.0.0.1:8000/api/book_transactions/</li>
+</ul>
+<p>GET (получение списка транзакций с книгами):
+<img alt="Photo" src="../images/52.png" />
+Эндпоинт <code>GET /api/book_transactions/</code> возвращает список всех транзакций с книгами, включая информацию о дате транзакции, типе операции (выдача или возврат), сроке возврата, статусе возврата, а также ID книги и читателя.</p>
+<p>POST (добавление новой транзакции):
+<img alt="Photo" src="../images/53.png" />
+<img alt="Photo" src="../images/54.png" />
+Эндпоинт <code>POST /api/book_transactions/</code> используется для создания новой транзакции с книгой. В теле запроса указываются данные о транзакции: дата, тип (например, выдача), срок возврата, статус возврата, а также ID книги и читателя.</p>
+<ul>
+<li>
+<p>GET (получение информации o транзакции по id): http://127.0.0.1:8000/api/book_transactions/<int:pk>/
+<img alt="Photo" src="../images/55.png" />
+Эндпоинт <code>GET /api/book_transactions/&lt;transaction_id&gt;/</code> возвращает подробную информацию о конкретной транзакции с книгой, включая дату транзакции, тип (например, выдача), срок возврата, статус возврата, а также ID книги и читателя.</p>
+</li>
+<li>
+<p>PATCH (отметка возврата книги по id): http://127.0.0.1:8000/api/book_transactions/<int:pk>/
+<img alt="Photo" src="../images/56.png" />
+<img alt="Photo" src="../images/57.png" />
+Эндпоинт <code>PATCH /api/book_transactions/&lt;transaction_id&gt;/</code> используется для обновления статуса возврата книги. В теле запроса передается обновленное значение поля <code>returned</code>, например, <code>true</code>, чтобы отметить, что книга была возвращена.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_6">Эндпоинты для отчетов</h2>
+<ul>
+<li>
+<p><strong>Получение отчета о работе библиотеки:</strong></p>
+<ul>
+<li>
+<p>GET: http://127.0.0.1:8000/api/reports/
+<img alt="Photo" src="../images/63.png" /></p>
+</li>
+<li>
+<p>GET (ежемесячный отчет за конкретный месяц и год): http://127.0.0.1:8000/api/reports/?report_type=monthly&amp;year=2023&amp;month=10 
+<img alt="Photo" src="../images/58.png" />
+Эндпоинт <code>GET /api/reports/?report_type=monthly&amp;year=2023&amp;month=10</code> предоставляет ежемесячный отчет о библиотеке за октябрь 2023 года. В ответе указываются данные о залах, общее количество книг и число новых читателей за указанный период.</p>
+</li>
+<li>
+<p>GET (ежемесячный отчет за весь год): http://127.0.0.1:8000/api/reports/?report_type=monthly&amp;year=2023
+<img alt="Photo" src="../images/59.png" />
+Эндпоинт <code>GET /api/reports/?report_type=monthly&amp;year=2023</code> возвращает ежемесячный отчет за 2023 год. В ответе отображается информация о залах (названия и количество мероприятий), общем числе книг и количестве новых читателей в течение года.</p>
+</li>
+<li>
+<p>GET (отчет со статистикой читателей (образование, возраст)): http://127.0.0.1:8000/api/reports/?report_type=reader_statistics
+<img alt="Photo" src="../images/60.png" />
+Эндпоинт <code>GET /api/reports/?report_type=reader_statistics</code> предоставляет статистику читателей. Ответ включает количество читателей младше 20 лет и процентное распределение уровней образования: бакалавриат (44.44%), средняя школа (22.22%), магистратура (22.22%) и докторантура (11.11%).</p>
+</li>
+<li>
+<p>GET (получение расширенного отчета о состоянии библиотеки): http://127.0.0.1:8000/api/reports/complex/</p>
+</li>
+<li>
+<p>GET (сводный отчёт за конкретный месяц и год): http://127.0.0.1:8000/api/reports/complex/?report_type=summary&amp;year=2023&amp;month=10
+<img alt="Photo" src="../images/61.png" />
+Эндпоинт <code>GET /api/reports/complex/?report_type=summary&amp;year=2023&amp;month=10</code> предоставляет обобщенную статистику за октябрь 2023 года. Ответ включает данные о читателях младше 20 лет, процентное распределение уровней образования, общее количество книг и читателей, а также сведения о заполненности читальных залов.</p>
+</li>
+<li>
+<p>GET (сводный отчет за весь год): http://127.0.0.1:8000/api/reports/complex/?report_type=summary&amp;year=2023
+<img alt="Photo" src="../images/62.png" />
+Эндпоинт <code>GET /api/reports/complex/?report_type=summary&amp;year=2023</code> возвращает комплексный отчет за указанный год. Данные включают количество читателей младше 20 лет, статистику уровней образования, общее количество книг и читателей, а также данные о читальных залах. <code>report_type=summary</code> — указывает, что требуется сводный отчёт.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
